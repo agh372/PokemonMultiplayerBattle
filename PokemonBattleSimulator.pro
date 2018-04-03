@@ -27,11 +27,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    socketthread.cpp
+    socketthread.cpp \
+    pokemon.cpp
 
 HEADERS += \
         mainwindow.h \
-    socketthread.h
+    socketthread.h \
+    pokemon.h
 
 FORMS += \
         mainwindow.ui
