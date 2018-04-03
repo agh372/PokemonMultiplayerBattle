@@ -5,7 +5,8 @@
 #-------------------------------------------------
 
 QT       += core gui
-
+QT += network
+QT += multimedia multimediawidgets
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = PokemonBattleSimulator
@@ -25,10 +26,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+    socketthread.cpp
 
 HEADERS += \
-        mainwindow.h
+        mainwindow.h \
+    socketthread.h
 
 FORMS += \
         mainwindow.ui
