@@ -1,6 +1,12 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
  #include <QtDebug>
+#include <QMediaPlayer>
+#include <QMediaPlaylist>
+#include "waiting.h"
+
+
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -26,4 +32,34 @@ MainWindow::~MainWindow()
 void MainWindow::on_start_clicked()
 {
     qInfo() << "Check";
+    thread = new SocketThread(ui->ipAddress->text());
+    connect(thread, SIGNAL(nameAccepted()), this, SLOT(nameAccepted()));
+
+    if(ui->PikachuRB->isChecked())
+        flag1 = "Pikachu";
+    else if(ui->BulbasaurRB->isChecked())
+        flag1 = "Bulbasaur";
+    else if(ui->CharmandarRB->isChecked())
+        flag1 = "Charmandar";
+    else if(ui->PidgeotRB->isChecked())
+        flag1 = "Pidgeot";
+    else if(ui->GeodudeRB->isChecked())
+        flag1 = "Geodude";
+    else
+        flag1 = "Squirtle";
+    QString s = "7 " + flag1;
+    s.append(QChar(23));
+    thread->sendMess(s);
 }
+
+void MainWindow::nameAccepted()
+{
+    qInfo() << "Server";
+
+    waiting *w = new waiting(flag1, thread, this->t);
+    this->music->stop();
+    w->show();
+    this->close();
+
+}
+

@@ -28,15 +28,19 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     socketthread.cpp \
-    pokemon.cpp
+    pokemon.cpp \
+    waiting.cpp
 
 HEADERS += \
         mainwindow.h \
     socketthread.h \
-    pokemon.h
+    pokemon.h \
+    waiting.h \
+    game.h
 
 FORMS += \
-        mainwindow.ui
+        mainwindow.ui \
+    waiting.ui
 
 RESOURCES += \
     resources.qrc
