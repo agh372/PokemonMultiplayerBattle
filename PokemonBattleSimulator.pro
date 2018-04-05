@@ -29,14 +29,18 @@ SOURCES += \
         mainwindow.cpp \
     socketthread.cpp \
     pokemon.cpp \
-    waiting.cpp
+    waiting.cpp \
+    player.cpp \
+    realplayer.cpp
 
 HEADERS += \
         mainwindow.h \
     socketthread.h \
     pokemon.h \
     waiting.h \
-    game.h
+    game.h \
+    realplayer.h \
+    player.h
 
 FORMS += \
         mainwindow.ui \

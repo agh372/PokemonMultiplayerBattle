@@ -7,7 +7,7 @@
 #include <QTimer>
 #include <QGraphicsScene>
 #include <QProgressBar>
-
+#include "socketthread.h"
 class Game : public QObject
 {
     Q_OBJECT
@@ -20,11 +20,11 @@ class Game : public QObject
        int num;
        QProgressBar *bar1, *bar2;
 
-   private slots:
-       void setTurn();
-       void attack();
-       void playerN(int);
-       void changeTurn();
+   //private slots:
+   //    void setTurn();
+     //  void attack();
+      // void playerN(int);
+      // void changeTurn();
 };
 
 #endif // GAME_H
