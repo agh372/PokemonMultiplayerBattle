@@ -60,9 +60,6 @@ void Server::newMessage()
                     t1 = QString::fromStdString(str);
                     QString s = "11";
                     s.append(QChar(23));
-                     qDebug("Reaches here haha");
-                    qDebug("Reaches here",s);
-
                     c1->write(s.toLocal8Bit());
                 }
                 else if(num == 2) {
