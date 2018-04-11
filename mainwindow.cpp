@@ -20,7 +20,6 @@ MainWindow::MainWindow(QWidget *parent) :
     this->setPalette(palette);
     ui->welcomeL->setStyleSheet("QLabel { background-color : white;}");
     ui->ql->setStyleSheet("QLabel { background-color : white;}");
-    connect(ui->start,SIGNAL(clicked(bool)),this,SLOT(on_start_clicked()));
 }
 
 MainWindow::~MainWindow()
@@ -54,10 +53,8 @@ void MainWindow::on_start_clicked()
 
 void MainWindow::nameAccepted()
 {
-    qInfo() << "Server";
-
     waiting *w = new waiting(flag1, thread, this->t);
-    this->music->stop();
+   // this->music->stop();
     w->show();
     this->close();
 

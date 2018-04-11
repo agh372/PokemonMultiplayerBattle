@@ -18,14 +18,25 @@ void SocketThread::sendMess(QString s)
 }
 
 void SocketThread::newMessage() {
-    qInfo() << "Socket new message";
-
     if(QTcpSocket *s = dynamic_cast<QTcpSocket *> (sender())) {
         message.append(s->readAll());
         if(!message.contains(QChar(23)))
             return;
         QStringList l = message.split(QChar(23));
         message = l.takeLast();
+        for(int i = 0; i < l.size();i++) {
+            string tmpS = l[i].toStdString();
+            stringstream stream(tmpS);
+            int a, num, num2;
+            stream >> a;
+           // if(a == 1 || a == 2) {
+
+            if(a == 11){
+                emit nameAccepted();
+                 }
+       // }
+    }
 
     }
 }
+
