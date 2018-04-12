@@ -1,7 +1,6 @@
 <RCC>
     <qresource prefix="/Images">
         <file>bg.png</file>
-        
+        <file>PBC.png</file>
     </qresource>
-   
 </RCC>

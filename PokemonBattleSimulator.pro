@@ -31,7 +31,8 @@ SOURCES += \
     pokemon.cpp \
     waiting.cpp \
     player.cpp \
-    realplayer.cpp
+    realplayer.cpp \
+    game.cpp
 
 HEADERS += \
         mainwindow.h \

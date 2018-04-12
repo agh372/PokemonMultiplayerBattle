@@ -32,8 +32,13 @@ void SocketThread::newMessage() {
            // if(a == 1 || a == 2) {
 
             if(a == 11){
-                emit nameAccepted();
-                 }
+             emit nameAccepted();
+           }  else if(a == 10) {
+                string t1, t2;
+                stream >> t1 >> t2;
+                QString qt = QString::fromStdString(t1), qt2 = QString::fromStdString(t2);
+                emit startGame(qt, qt2);
+            }
        // }
     }
 
