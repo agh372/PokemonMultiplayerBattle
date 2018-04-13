@@ -2,5 +2,16 @@
     <qresource prefix="/Images">
         <file>bg.png</file>
         <file>PBC.png</file>
+        <file>pikachu.gif</file>
+        <file>bulbasaur.gif</file>
+        <file>logo.png</file>
+    </qresource>
+    <qresource prefix="/pokemon">
+        <file>GIFs/bulbasaur/bulbasaur.gif</file>
+        <file>GIFs/pikachu/pikachu.gif</file>
+        <file>GIFs/geodude/geodude.gif</file>
+        <file>GIFs/pidgeot/pidgeot.gif</file>
+        <file>GIFs/squirtle/squirtle.gif</file>
+        <file>GIFs/charmander/charmander.gif</file>
     </qresource>
 </RCC>

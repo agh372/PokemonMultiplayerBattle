@@ -25,7 +25,7 @@ Game::Game(SocketThread *t, QTimer *timer, QString player1Flag,QString player2Fl
     QGraphicsView *v = new QGraphicsView(scene);
     v->setFixedSize(1285, 685);
     scene->setSceneRect(0, 0, 1280, 680);
- //   v->fitInView(scene()->sceneRect(), Qt::KeepAspectRatio);
+    //v->fitInView(scene()->sceneRect(), Qt::KeepAspectRatio);
    // scene->sceneRect(),Qt::KeepAspectRatio;
     v->show();
 }

@@ -17,13 +17,13 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     QTimer *t;
+     QMovie *movie;
     ~MainWindow();
 
 private slots:
-
     void on_start_clicked();
     void nameAccepted();
-
+    void onClickRadioButton(QString);
 
 private:
     QString flag1;

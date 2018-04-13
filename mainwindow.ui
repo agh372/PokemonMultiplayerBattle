@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>386</width>
-    <height>389</height>
+    <width>585</width>
+    <height>505</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,9 +17,9 @@
    <widget class="QLabel" name="welcomeL">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>30</y>
-      <width>301</width>
+      <x>320</x>
+      <y>110</y>
+      <width>191</width>
       <height>24</height>
      </rect>
     </property>
@@ -29,15 +29,15 @@
      </font>
     </property>
     <property name="text">
-     <string>Pokemon Multiplayer Battle</string>
+     <string>Multiplayer Battle</string>
     </property>
    </widget>
    <widget class="QLabel" name="ql">
     <property name="geometry">
      <rect>
-      <x>70</x>
-      <y>130</y>
-      <width>171</width>
+      <x>20</x>
+      <y>180</y>
+      <width>131</width>
       <height>17</height>
      </rect>
     </property>
@@ -48,21 +48,21 @@
    <widget class="QLabel" name="ipL">
     <property name="geometry">
      <rect>
-      <x>90</x>
-      <y>70</y>
-      <width>91</width>
-      <height>17</height>
+      <x>20</x>
+      <y>330</y>
+      <width>171</width>
+      <height>20</height>
      </rect>
     </property>
     <property name="text">
-     <string>IP Address : </string>
+     <string>Type IP Address and click Start</string>
     </property>
    </widget>
    <widget class="QRadioButton" name="CharmandarRB">
     <property name="geometry">
      <rect>
-      <x>70</x>
-      <y>160</y>
+      <x>20</x>
+      <y>220</y>
       <width>91</width>
       <height>22</height>
      </rect>
@@ -77,8 +77,8 @@
    <widget class="QRadioButton" name="PikachuRB">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>191</y>
+      <x>120</x>
+      <y>251</y>
       <width>71</width>
       <height>21</height>
      </rect>
@@ -93,8 +93,8 @@
    <widget class="QPushButton" name="quit">
     <property name="geometry">
      <rect>
-      <x>220</x>
-      <y>270</y>
+      <x>150</x>
+      <y>400</y>
       <width>97</width>
       <height>26</height>
      </rect>
@@ -106,8 +106,8 @@
    <widget class="QRadioButton" name="BulbasaurRB">
     <property name="geometry">
      <rect>
-      <x>70</x>
-      <y>190</y>
+      <x>20</x>
+      <y>250</y>
       <width>117</width>
       <height>22</height>
      </rect>
@@ -122,8 +122,8 @@
    <widget class="QLineEdit" name="ipAddress">
     <property name="geometry">
      <rect>
-      <x>90</x>
-      <y>90</y>
+      <x>20</x>
+      <y>350</y>
       <width>211</width>
       <height>27</height>
      </rect>
@@ -132,8 +132,8 @@
    <widget class="QPushButton" name="start">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>270</y>
+      <x>20</x>
+      <y>400</y>
       <width>97</width>
       <height>26</height>
      </rect>
@@ -145,8 +145,8 @@
    <widget class="QRadioButton" name="PidgeotRB">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>160</y>
+      <x>120</x>
+      <y>220</y>
       <width>101</width>
       <height>20</height>
      </rect>
@@ -161,8 +161,8 @@
    <widget class="QRadioButton" name="SquirtleRB">
     <property name="geometry">
      <rect>
-      <x>70</x>
-      <y>220</y>
+      <x>20</x>
+      <y>280</y>
       <width>117</width>
       <height>22</height>
      </rect>
@@ -177,8 +177,8 @@
    <widget class="QRadioButton" name="GeodudeRB">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>220</y>
+      <x>120</x>
+      <y>280</y>
       <width>117</width>
       <height>22</height>
      </rect>
@@ -190,13 +190,39 @@
      <string notr="true">player1BG</string>
     </attribute>
    </widget>
+   <widget class="QLabel" name="processLabel">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>70</y>
+      <width>101</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="title">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>10</y>
+      <width>291</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>386</width>
+     <width>585</width>
      <height>21</height>
     </rect>
    </property>

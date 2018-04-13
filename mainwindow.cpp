@@ -4,7 +4,8 @@
 #include <QMediaPlayer>
 #include <QMediaPlaylist>
 #include "waiting.h"
-
+#include <QMovie>
+#include <QSignalMapper>
 
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -20,6 +21,33 @@ MainWindow::MainWindow(QWidget *parent) :
     this->setPalette(palette);
     ui->welcomeL->setStyleSheet("QLabel { background-color : white;}");
     ui->ql->setStyleSheet("QLabel { background-color : white;}");
+    movie = new QMovie(":/pokemon/GIFs/pikachu/pikachu.gif");
+    QPixmap title(":/Images/logo.png");
+    ui->title->setPixmap((title));
+    ui->title->setScaledContents( true );
+    ui->title->setSizePolicy( QSizePolicy::Ignored, QSizePolicy::Ignored );
+    ui->processLabel->setMovie(movie);
+    ui->processLabel->setScaledContents( true );
+    ui->processLabel->setSizePolicy( QSizePolicy::Ignored, QSizePolicy::Ignored );
+
+    movie->start();
+    QSignalMapper* signalMapper = new QSignalMapper (this) ;
+    connect (ui->BulbasaurRB, SIGNAL(clicked()), signalMapper, SLOT(map())) ;
+    connect (ui->PikachuRB, SIGNAL(clicked()), signalMapper, SLOT(map())) ;
+    connect (ui->SquirtleRB, SIGNAL(clicked()), signalMapper, SLOT(map())) ;
+    connect (ui->CharmandarRB, SIGNAL(clicked()), signalMapper, SLOT(map())) ;
+    connect (ui->GeodudeRB, SIGNAL(clicked()), signalMapper, SLOT(map())) ;
+    connect (ui->PidgeotRB, SIGNAL(clicked()), signalMapper, SLOT(map())) ;
+
+    signalMapper -> setMapping (ui->BulbasaurRB,"bulbasaur") ;
+    signalMapper -> setMapping (ui->PikachuRB,"pikachu") ;
+    signalMapper -> setMapping (ui->SquirtleRB,"squirtle") ;
+    signalMapper -> setMapping (ui->CharmandarRB,"charmander") ;
+    signalMapper -> setMapping (ui->GeodudeRB,"geodude") ;
+
+    signalMapper -> setMapping (ui->PidgeotRB,"pidgeot") ;
+    ui->PikachuRB->setChecked((true));
+    connect (signalMapper, SIGNAL(mapped(QString)), this, SLOT(onClickRadioButton(QString))) ;
 }
 
 MainWindow::~MainWindow()
@@ -46,6 +74,7 @@ void MainWindow::on_start_clicked()
         flag1 = "Geodude";
     else
         flag1 = "Squirtle";
+
     QString s = "7 " + flag1;
     s.append(QChar(23));
     thread->sendMess(s);
@@ -57,6 +86,11 @@ void MainWindow::nameAccepted()
    // this->music->stop();
     w->show();
     this->close();
-
 }
 
+void MainWindow::onClickRadioButton(QString str)
+{
+     movie = new QMovie(":/pokemon/GIFs/"+str+"/"+str+".gif");
+     ui->processLabel->setMovie(movie);
+     movie->start();
+}
