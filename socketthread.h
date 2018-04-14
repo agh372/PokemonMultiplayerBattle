@@ -15,7 +15,7 @@ public:
 
 signals:
     void playerN(int);
-    void startGame(QString s, QString s2);
+    void startGame(QString s, QString s2,int n);
     void nameAccepted();
     void changeTurn();
 

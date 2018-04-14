@@ -85,11 +85,11 @@ void Server::newMessage()
                         s = "4 ";
                         s.append(QChar(23));
                         c2->write(s.toLocal8Bit());
+                        qDebug() <<"wow: "+ s;
                         return;
                     }
                 }
-            }
-            else {
+            } else {
                 if(c != c1 && c1->state() == QTcpSocket::ConnectedState) {
                     s.append(QChar(23));
                     c1->write(s.toLocal8Bit());

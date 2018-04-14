@@ -56,3 +56,9 @@ void Player::startAnimaion()
 {
 //
 }
+
+void Player::mousePressEvent(QGraphicsSceneMouseEvent *event)
+{
+
+
+}

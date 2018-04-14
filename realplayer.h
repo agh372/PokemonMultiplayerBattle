@@ -4,8 +4,8 @@
 #include "socketthread.h"
 #include <QPropertyAnimation>
 #include "QGraphicsScene"
-
- #include "pokemon.h"
+#include "player.h"
+#include "pokemon.h"
 
 using namespace std;
 
@@ -13,9 +13,10 @@ class RealPlayer
 {
 
 public:
-        RealPlayer(SocketThread *, QGraphicsScene *, int, QString nameOfTeam);
+        RealPlayer(SocketThread *, QGraphicsScene *, int, QString nameOfTeam, QString nameOfTeam2,int);
         void change(bool);
-       // Player *p[6];
+        Player *p,*p2;
+
 
 private:
     int damage = 100;

@@ -5,6 +5,7 @@
         <file>pikachu.gif</file>
         <file>bulbasaur.gif</file>
         <file>logo.png</file>
+        <file>battle.png</file>
     </qresource>
     <qresource prefix="/pokemon">
         <file>GIFs/bulbasaur/bulbasaur.gif</file>
@@ -13,5 +14,11 @@
         <file>GIFs/pidgeot/pidgeot.gif</file>
         <file>GIFs/squirtle/squirtle.gif</file>
         <file>GIFs/charmander/charmander.gif</file>
+        <file>GIFs/pikachu/pikachu_back.gif</file>
+        <file>GIFs/bulbasaur/bulbasaur_back.gif</file>
+        <file>GIFs/geodude/geodude_back.gif</file>
+        <file>GIFs/charmander/charmander_back.gif</file>
+        <file>GIFs/squirtle/squirtle_back.gif</file>
+        <file>GIFs/pidgeot/pidgeot_back.gif</file>
     </qresource>
 </RCC>

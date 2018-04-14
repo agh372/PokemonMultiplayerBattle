@@ -24,7 +24,10 @@ void SocketThread::newMessage() {
             return;
         QStringList l = message.split(QChar(23));
         message = l.takeLast();
+        qDebug() << l.size();
+
         for(int i = 0; i < l.size();i++) {
+            qDebug() << l[i];
             string tmpS = l[i].toStdString();
             stringstream stream(tmpS);
             int a, num, num2;
@@ -37,7 +40,7 @@ void SocketThread::newMessage() {
                 string t1, t2;
                 stream >> t1 >> t2;
                 QString qt = QString::fromStdString(t1), qt2 = QString::fromStdString(t2);
-                emit startGame(qt, qt2);
+                emit startGame(qt, qt2,l.size());
             }
        // }
     }

@@ -13,20 +13,27 @@
 #include <QLabel>
 #include <QFont>
 #include <QProgressBar>
+#include <QMovie>
 
 
-Game::Game(SocketThread *t, QTimer *timer, QString player1Flag,QString player2Flag)
+Game::Game(SocketThread *t, QTimer *timer, QString player1Flag,QString player2Flag,int n)
 {
     qDebug() << "Game Started ";
     this->t = t;
     scene = new QGraphicsScene();
-    scene->setBackgroundBrush(QImage(":/Images/PBC.png"));
+
+    scene->setBackgroundBrush(QImage(":/Images/battle.png"));
 
     QGraphicsView *v = new QGraphicsView(scene);
-    v->setFixedSize(1285, 685);
-    scene->setSceneRect(0, 0, 1280, 680);
+    v->setFixedSize(716, 625);
+    scene->setSceneRect(0, 0, 716, 620);
     //v->fitInView(scene()->sceneRect(), Qt::KeepAspectRatio);
    // scene->sceneRect(),Qt::KeepAspectRatio;
+   // connect(t, SIGNAL(changeTurn()), this, SLOT(changeTurn()));
+
+    p1 = new RealPlayer (t, scene, 1, player1Flag,player2Flag ,n);
+  //  p2 = new RealPlayer (t, scene, 2, player2Flag,n);
+
     v->show();
 }
 

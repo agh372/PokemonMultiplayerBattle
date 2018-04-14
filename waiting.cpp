@@ -9,7 +9,7 @@ waiting::waiting(QString t1, SocketThread *thread, QTimer *timer, QWidget *paren
 {
     this->timer = timer;
     this->thread = thread;
-    connect(thread, SIGNAL(startGame(QString, QString)), this, SLOT(startGame(QString, QString)));
+    connect(thread, SIGNAL(startGame(QString, QString,int)), this, SLOT(startGame(QString, QString,int)));
     this->t1 = t1;
     ui->setupUi(this);
 }
@@ -19,9 +19,11 @@ waiting::~waiting()
     delete ui;
 }
 
-void waiting::startGame(QString t1, QString t2)
+void waiting::startGame(QString t1, QString t2,int n)
 {
     qDebug() << "Start Game ";
-    Game *g = new Game(this->thread, this->timer, t1, t2);
+    qDebug() << n;
+
+    Game *g = new Game(this->thread, this->timer, t1, t2,n);
     this->close();
 }

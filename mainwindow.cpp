@@ -63,17 +63,17 @@ void MainWindow::on_start_clicked()
     connect(thread, SIGNAL(nameAccepted()), this, SLOT(nameAccepted()));
 
     if(ui->PikachuRB->isChecked())
-        flag1 = "Pikachu";
+        flag1 = "pikachu";
     else if(ui->BulbasaurRB->isChecked())
-        flag1 = "Bulbasaur";
+        flag1 = "bulbasaur";
     else if(ui->CharmandarRB->isChecked())
-        flag1 = "Charmandar";
+        flag1 = "charmander";
     else if(ui->PidgeotRB->isChecked())
-        flag1 = "Pidgeot";
+        flag1 = "pidgeot";
     else if(ui->GeodudeRB->isChecked())
-        flag1 = "Geodude";
+        flag1 = "geodude";
     else
-        flag1 = "Squirtle";
+        flag1 = "squirtle";
 
     QString s = "7 " + flag1;
     s.append(QChar(23));

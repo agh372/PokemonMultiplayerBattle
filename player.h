@@ -10,8 +10,9 @@
 #include <cmath>
 #include <QObject>
 #include "socketthread.h"
+#include<QLabel>
 
-class Player : public QObject
+class Player : public QLabel, public QGraphicsPixmapItem
 {
     Q_OBJECT
 

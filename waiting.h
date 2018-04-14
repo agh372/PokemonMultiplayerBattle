@@ -23,7 +23,7 @@ private:
     SocketThread *thread;
 
 private slots:
-    void startGame(QString, QString);
+    void startGame(QString, QString,int n);
 };
 
 #endif // WAITING_H
