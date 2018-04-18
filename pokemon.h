@@ -36,7 +36,7 @@ struct Item
 class Pokemon
 {
  public:
-  Pokemon(std::string name, std::string ability,std::string holding_item, char** attacks);
+  Pokemon(std::string name, Ability* ability,std::string holding_item, Attack* attacks);
   ~Pokemon();
   int getHP();
   int getATK();

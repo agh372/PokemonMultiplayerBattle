@@ -1,7 +1,7 @@
 #include "pokemon.h"
 #include <string>
 
-Pokemon::Pokemon(std::string name, std::string ability,std::string holding_item, char** attacks)
+Pokemon::Pokemon(std::string name, Ability* ability,std::string holding_item, Attack* attacks)
 {
 
 }

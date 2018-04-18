@@ -32,7 +32,8 @@ SOURCES += \
     waiting.cpp \
     player.cpp \
     realplayer.cpp \
-    game.cpp
+    game.cpp \
+    mechanics.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -41,7 +42,8 @@ HEADERS += \
     waiting.h \
     game.h \
     realplayer.h \
-    player.h
+    player.h \
+    mechanics.h
 
 FORMS += \
         mainwindow.ui \
