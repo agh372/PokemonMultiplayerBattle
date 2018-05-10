@@ -28,11 +28,11 @@ void Mechanics::initialize_player(Pokemon* pokemon)
 }
 
 
-int Mechanics::applyDamage(Pokemon* pokemon1, Pokemon* pokemon2, Attack* attack)
-{
+//int Mechanics::applyDamage(Pokemon* pokemon1, Pokemon* pokemon2, Attack* attack)
+//{
 
 
-}
+//}
 
 void Mechanics::readJson()
 {
