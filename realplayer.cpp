@@ -68,8 +68,7 @@ void RealPlayer::player1Setting(QString nameOfpokemon,QString nameOfpokemon2,QGr
    p2->setSizePolicy( QSizePolicy::Ignored, QSizePolicy::Ignored );
    p2->setWindowFlags(Qt::Window | Qt::FramelessWindowHint);
    p2->setAttribute(Qt::WA_TranslucentBackground);
-   s->addWidget(p2);
-}
+   s->addWidget(p2);}
 
 
 
@@ -95,4 +94,5 @@ void RealPlayer::player2Setting(QString nameOfpokemon,QString nameOfpokemon2,QGr
     p2->setWindowFlags(Qt::Window | Qt::FramelessWindowHint);
     p2->setAttribute(Qt::WA_TranslucentBackground);
     s->addWidget(p2);
+
 }
