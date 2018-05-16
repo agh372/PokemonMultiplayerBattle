@@ -24,7 +24,8 @@ Mechanics::Mechanics()
 void Mechanics::initialize_player(Pokemon* pokemon)
 {
     readJson();
-   // pokemon = new Pokemon()
+ //   pokemon = new Pokemon();
+    //pokemon->attacksList
 }
 
 

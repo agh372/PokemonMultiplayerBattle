@@ -5,6 +5,9 @@
 #include <QMediaPlaylist>
 #include "waiting.h"
 #include <QMovie>
+#include <QFile>
+#include <QFileSystemModel>
+#include <QTreeView>
 #include <QSignalMapper>
 
 
@@ -12,8 +15,15 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+    QFileSystemModel model;
+    model.setRootPath("");
+    QFile res(":/fonts/PokemonGB.ttf");
+    QFont f;
+    f.setFamily("Pokemon GB");
+    f.setPointSize(12);
     ui->setupUi(this);
     ui->start->setText("Start");
+    ui->start->setFont(f);
     QPixmap bkgnd(":/Images/bg.png");
     bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
     QPalette palette;

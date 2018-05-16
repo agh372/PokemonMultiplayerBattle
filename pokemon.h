@@ -2,6 +2,8 @@
 #define POKEMON
 
 #include <string>
+#include <QVector>
+
 struct Ability
 {
   std::string name;
@@ -36,7 +38,7 @@ struct Item
 class Pokemon
 {
  public:
-  Pokemon(std::string name, Ability* ability,std::string holding_item, Attack* attacks);
+  Pokemon(std::string name);
   ~Pokemon();
   int getHP();
   int getATK();
@@ -45,7 +47,7 @@ class Pokemon
   int getSPDEF();
   int getSPEED();
   Ability*  getAbility();
-  Attack**  getAttacks();
+  QVector<Attack>  getAttacks();
   std::string getType();
   int currentHP, ATK_bonus, DEF_bonus, SPATK_bonus, SPDEF_bonus, SPEED_bonus; //Can be negative
   bool isFainted;    //default is False unless otherwise specified.
@@ -63,6 +65,7 @@ class Pokemon
   int HP_base, ATK_base, DEF_base, SPATK_base, SPDEF_base, SPEED_base;
   int HP_EV, ATK_EV, DEF_EV, SPATK_EV, SPDEF_EV, SPEED_EV;
   int HP_IV, ATK_IV, DEF_IV, SPATK_IV, SPDEF_IV, SPEED_IV;
+  QVector<Attack> attacksList;
   int level = 100;
   std::string name;
   std::string type1;

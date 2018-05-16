@@ -7,6 +7,7 @@
 #include <cstring>
 #include <QTimer>
 #include <QMovie>
+#include <QPushButton>
 
 using namespace std;
 
@@ -68,7 +69,26 @@ void RealPlayer::player1Setting(QString nameOfpokemon,QString nameOfpokemon2,QGr
    p2->setSizePolicy( QSizePolicy::Ignored, QSizePolicy::Ignored );
    p2->setWindowFlags(Qt::Window | Qt::FramelessWindowHint);
    p2->setAttribute(Qt::WA_TranslucentBackground);
-   s->addWidget(p2);}
+   s->addWidget(p2);
+   for(int i = 0 ; i < 2 ; i++ )
+   {
+      QPushButton* btnuser = new QPushButton();
+      btnuser->setGeometry(QRect(160+(i*300), 504, 126, 36));
+     // btnuser->setGeometry(QRect(460, 504, 126, 36));
+      btnuser->setText("Test User");
+      QGraphicsProxyWidget *proxy = s->addWidget(btnuser);
+   }
+
+   for(int i = 0 ; i < 2 ; i++ )
+   {
+      QPushButton* btnuser = new QPushButton();
+      btnuser->setGeometry(QRect(160+(i*300), 544, 126, 36));
+     // btnuser->setGeometry(QRect(460, 504, 126, 36));
+      btnuser->setText("Test User");
+      QGraphicsProxyWidget *proxy = s->addWidget(btnuser);
+   }
+
+}
 
 
 
