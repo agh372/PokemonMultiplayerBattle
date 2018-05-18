@@ -26,8 +26,8 @@ public:
     bool isMyTurn ;
     void attack(Attack**);
     void showAnimation(Pokemon);
-    void player1Setting(QString,QString,QGraphicsScene*);
-    void player2Setting(QString,QString,QGraphicsScene*);
+    void player1Setting(QString,QString,QGraphicsScene*,Pokemon*);
+    void player2Setting(QString,QString,QGraphicsScene*,Pokemon*);
 
 };
 

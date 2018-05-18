@@ -2,6 +2,7 @@
 #include "player.h"
 #include "QGraphicsScene"
 #include "socketthread.h"
+#include "mechanics.h"
 #include <QFile>
 #include <sstream>
 #include <cstring>
@@ -21,13 +22,18 @@ RealPlayer::RealPlayer(SocketThread *thread, QGraphicsScene *s, int a, QString n
     p2->playerNum = 2;
 
 
-    if(n == 2){
-        player1Setting(nameOfpokemon,nameOfpokemon2,s);
-    }else{
-         player2Setting(nameOfpokemon,nameOfpokemon2,s);
-    }
+    Mechanics pokemonManager = Mechanics::instance();
+   Pokemon* pokemon1 =  pokemonManager.initialize_player(nameOfpokemon);
+    Pokemon* pokemon2 = pokemonManager.initialize_player(nameOfpokemon2);
 
-   // Pokemon pokemon1 = new Pokemon(;)
+
+    if(n == 2){
+        player1Setting(nameOfpokemon,nameOfpokemon2,s,pokemon1);
+        //initialize_player(nameOfpokemon);
+    }else{
+         player2Setting(nameOfpokemon,nameOfpokemon2,s,pokemon2);
+    }
+   // Pokemon pokemon1 = new Pokemon();
 }
 
 void RealPlayer::change(bool b)
@@ -47,7 +53,7 @@ void RealPlayer::showAnimation(Pokemon pokemon)
 }
 
 
-void RealPlayer::player1Setting(QString nameOfpokemon,QString nameOfpokemon2,QGraphicsScene *s)
+void RealPlayer::player1Setting(QString nameOfpokemon,QString nameOfpokemon2,QGraphicsScene *s,Pokemon* pokemon)
 {
 
    qDebug() << "Player 1 ";
@@ -75,7 +81,9 @@ void RealPlayer::player1Setting(QString nameOfpokemon,QString nameOfpokemon2,QGr
       QPushButton* btnuser = new QPushButton();
       btnuser->setGeometry(QRect(160+(i*300), 504, 126, 36));
      // btnuser->setGeometry(QRect(460, 504, 126, 36));
-      btnuser->setText("Test User");
+      if(pokemon->getAttacks().count()>2){
+          btnuser->setText(pokemon->getAttacks()[i].name);
+      }
       QGraphicsProxyWidget *proxy = s->addWidget(btnuser);
    }
 
@@ -92,7 +100,7 @@ void RealPlayer::player1Setting(QString nameOfpokemon,QString nameOfpokemon2,QGr
 
 
 
-void RealPlayer::player2Setting(QString nameOfpokemon,QString nameOfpokemon2,QGraphicsScene *s)
+void RealPlayer::player2Setting(QString nameOfpokemon,QString nameOfpokemon2,QGraphicsScene *s,Pokemon* pokemon)
 {
 
     QMovie* movie2 = new QMovie(":/pokemon/GIFs/"+nameOfpokemon+"/"+nameOfpokemon+".gif");
@@ -116,3 +124,4 @@ void RealPlayer::player2Setting(QString nameOfpokemon,QString nameOfpokemon2,QGr
     s->addWidget(p2);
 
 }
+

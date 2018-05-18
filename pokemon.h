@@ -14,7 +14,7 @@ struct Ability
 
 struct Attack
 {
-  std::string name;
+  QString name;
   std::string type;
   std::string category;
   int power;
@@ -38,7 +38,7 @@ struct Item
 class Pokemon
 {
  public:
-  Pokemon(std::string name);
+  Pokemon(QString name);
   ~Pokemon();
   int getHP();
   int getATK();
@@ -59,6 +59,7 @@ class Pokemon
   bool isBurned;
   bool isFlinched;
   std::string gender;
+  void setAttacks(QVector<Attack>);
 
  private:
   int MAX_HP, ATK, DEF, SPATK, SPDEF, SPEED;
@@ -67,7 +68,7 @@ class Pokemon
   int HP_IV, ATK_IV, DEF_IV, SPATK_IV, SPDEF_IV, SPEED_IV;
   QVector<Attack> attacksList;
   int level = 100;
-  std::string name;
+  QString name;
   std::string type1;
 
 };

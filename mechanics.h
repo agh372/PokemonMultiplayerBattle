@@ -2,7 +2,10 @@
 #include <map>
 #include "pokemon.h"
 #include <QVector>
-
+#include <QJsonArray>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QtDebug>
 
 enum class PokemonTypes
   {
@@ -16,15 +19,22 @@ enum class PokemonTypes
 
 class Mechanics
 {
- public:
-  Mechanics();
-  ~Mechanics();
+private:
+   Mechanics();
+public:
+   static Mechanics& instance()
+   {
+      static Mechanics INSTANCE;
+      return INSTANCE;
+   }
+
+   ~Mechanics() { }
   static const enum type {ELECTRIC, FIRE, WATER, FLYING, GRASS, ROCK} ptype;
 
 
   QVector <QVector <int> > attackPercentageVector;
   int attack_perc[6][5] = { {1, 1, 1, 1,1}, {1, 1, 1, 1,1}, {1, 1, 1, 1,1}, {1, 1, 1, 1,1},{1, 1, 1, 1,1},{1, 1, 1, 1,1}};
-  void initialize_player(Pokemon* pokemon);
+  Pokemon* initialize_player(QString pokemon);
   //void applyDamage(Pokemon* pokemon1, Pokemon* pokemon2, Attack* attack);
-  void readJson();
+  QJsonArray readJson(QString pokemonName);
 };

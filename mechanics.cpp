@@ -3,29 +3,39 @@
 #include "mechanics.h"
 #include "pokemon.h"
 #include <QFile>
-#include <QJsonDocument>
+
+
+
 
 
 Mechanics::Mechanics()
 {
-    for(int i = 0; i < 6; i++)
-    {
-        QVector<int> tempVector;
+//    for(int i = 0; i < 6; i++)
+//    {
+//        QVector<int> tempVector;
 
-        for(int j = 0; j < 6; j++)
-        {
-            tempVector.push_back(attackPercentageVector[i][j]);
-        }
-        attackPercentageVector.push_back(tempVector);
-    }
+//        for(int j = 0; j < 6; j++)
+//        {
+//            tempVector.push_back(attackPercentageVector[i][j]);
+//        }
+//        attackPercentageVector.push_back(tempVector);
+//    }
 }
 
 
-void Mechanics::initialize_player(Pokemon* pokemon)
+Pokemon* Mechanics::initialize_player(QString pokemonName)
 {
-    readJson();
- //   pokemon = new Pokemon();
-    //pokemon->attacksList
+   QJsonArray pokemonMoves = readJson(pokemonName);
+    Pokemon* pokemon = new Pokemon(pokemonName);
+    QVector<Attack> attackList;
+    for(int i=0;i<pokemonMoves.count();i++)
+    {
+         Attack* attack = new Attack();
+         attack->name =  pokemonMoves[i].toString();
+         attackList.append(*attack);
+    }
+    pokemon->setAttacks(attackList);
+    return pokemon;
 }
 
 
@@ -35,20 +45,23 @@ void Mechanics::initialize_player(Pokemon* pokemon)
 
 //}
 
-void Mechanics::readJson()
+QJsonArray Mechanics::readJson(QString pokemonName)
 {
     QString val;
-    QFile file;
-//    file.setFileName("test.json");
-//    file.open(QIODevice::ReadOnly | QIODevice::Text);
-//    val = file.readAll();
-//    file.close();
-//    QJsonDocument d = QJsonDocument::fromJson(val.toUtf8());
-//    QJsonObject sett2 = d.object();
-//    QJsonValue value = sett2.value(QString("appName"));
-//    QJsonObject item = value.toObject();
-//    QJsonValue subobj = item["description"];
-//    QJsonArray test = item["imp"].toArray();
+    QFile file("C:\\Users\\gurud\\Documents\\PokemonBattleSimulator\\pokemon.json");
+   // file.setFileName("pokemon.json");
+    file.open(QIODevice::ReadOnly | QIODevice::Text);
+    val = file.readAll();
+    file.close();
+    QJsonDocument d = QJsonDocument::fromJson(val.toUtf8());
+    QJsonObject sett2 = d.object();
+    QJsonValue value = sett2.value(QString(pokemonName));
+     qDebug() << "JSON POK "+pokemonName;
+    QJsonObject item = value.toObject();
 
+   // QJsonValue subobj = item["description"];
+    QJsonArray test = item["moves"].toArray();
+    qDebug() << test[1].toString();
+    return test;
 }
 

@@ -1,9 +1,11 @@
 #include "pokemon.h"
 #include <string>
 
-Pokemon::Pokemon(std::string name)
-{
+using namespace std;
 
+Pokemon::Pokemon(QString name)
+{
+    this->name = name;
 }
 
 Pokemon::~Pokemon()
@@ -16,9 +18,9 @@ int Pokemon::getHP()
   return MAX_HP;
 }
 
-int Pokemon::getATK()
+QVector<Attack> Pokemon::getAttacks()
 {
-  return ATK;
+  return attacksList;
 }
 
 int Pokemon::getDEF()
@@ -39,4 +41,10 @@ int Pokemon::getSPDEF()
 int Pokemon::getSPEED()
 {
   return SPEED;
+}
+
+void  Pokemon::setAttacks(QVector<Attack> attackList)
+{
+
+this->attacksList =attackList;
 }
