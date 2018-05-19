@@ -76,26 +76,16 @@ void RealPlayer::player1Setting(QString nameOfpokemon,QString nameOfpokemon2,QGr
    p2->setWindowFlags(Qt::Window | Qt::FramelessWindowHint);
    p2->setAttribute(Qt::WA_TranslucentBackground);
    s->addWidget(p2);
-   for(int i = 0 ; i < 2 ; i++ )
-   {
-      QPushButton* btnuser = new QPushButton();
-      btnuser->setGeometry(QRect(160+(i*300), 504, 126, 36));
-     // btnuser->setGeometry(QRect(460, 504, 126, 36));
-      if(pokemon->getAttacks().count()>2){
-          btnuser->setText(pokemon->getAttacks()[i].name);
-      }
-      QGraphicsProxyWidget *proxy = s->addWidget(btnuser);
-   }
 
-   for(int i = 0 ; i < 2 ; i++ )
-   {
-      QPushButton* btnuser = new QPushButton();
-      btnuser->setGeometry(QRect(160+(i*300), 544, 126, 36));
-     // btnuser->setGeometry(QRect(460, 504, 126, 36));
-      btnuser->setText("Test User");
-      QGraphicsProxyWidget *proxy = s->addWidget(btnuser);
-   }
+    for(int i= 0;i< pokemon->getAttacks().count();i++)
+    {
 
+    QPushButton* btnuser = new QPushButton();
+    btnuser->setGeometry(QRect(160+((i%2)*300), 504+40*(i/2), 126, 36));
+    btnuser->setText(pokemon->getAttacks()[i].name);
+    QGraphicsProxyWidget *proxy = s->addWidget(btnuser);
+//btnuser->setGeometry(QRect(160+(i*300), 544, 126, 36));
+    }
 }
 
 
@@ -122,6 +112,16 @@ void RealPlayer::player2Setting(QString nameOfpokemon,QString nameOfpokemon2,QGr
     p2->setWindowFlags(Qt::Window | Qt::FramelessWindowHint);
     p2->setAttribute(Qt::WA_TranslucentBackground);
     s->addWidget(p2);
+
+    for(int i= 0;i< pokemon->getAttacks().count();i++)
+    {
+
+    QPushButton* btnuser = new QPushButton();
+    btnuser->setGeometry(QRect(160+((i%2)*300), 504+40*(i/2), 126, 36));
+    btnuser->setText(pokemon->getAttacks()[i].name);
+    QGraphicsProxyWidget *proxy = s->addWidget(btnuser);
+//btnuser->setGeometry(QRect(160+(i*300), 544, 126, 36));
+    }
 
 }
 
