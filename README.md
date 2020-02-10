@@ -5,7 +5,12 @@ Pokemon is a media franchise owned by ‘Pokemon Company’. It is centered on f
 
 ## Screenshot
 
-![pok](https://user-images.githubusercontent.com/37753430/52512211-4e160e80-2bc9-11e9-87c3-1531adb0893e.png)
+![Screenshot (978)](https://user-images.githubusercontent.com/37753430/74115255-ef84c700-4b73-11ea-8a36-48f8cf978c20.png)
+
+![pok](https://user-images.githubusercontent.com/37753430/74115273-1511d080-4b74-11ea-9599-3440faed9ab1.png)
+
+
+![Screenshot (977)](https://user-images.githubusercontent.com/37753430/74115258-f3184e00-4b73-11ea-924e-79e5e65e80ae.png)
 
 ## Install
 For running the game you need to install Qt5.
